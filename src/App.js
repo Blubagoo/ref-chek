@@ -1,25 +1,28 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter as Router } from 'react-router-dom';
+
+import MainHead from './components/main-head';
+import TopHead from './components/top-head';
+import Nav from './components/nav';
+import Table from './components/table';
+
 
 class App extends Component {
   render() {
     return (
-      <div className='App'>
-        <header className='App-header'>
-          <img src={logo} className='App-logo' alt='logo' />
-          <h1 className='App-title'>Welcome to React</h1>
-        </header>
-        <main role='main'>
-          <div className='main'>
-          
-          </div>
-        </main>
-        <footer role="content-info">
-        <div className="foot">
+      <Router>
+        <div className='body'>
+          <TopHead />
+          <main role='main'>
+            <MainHead />
+            <div className='main'>
+              <Nav />
+              <Table />
+            </div>
+          </main>
         </div>
-        </footer>
-      </div>
+      </Router>
     );
   }
 }
