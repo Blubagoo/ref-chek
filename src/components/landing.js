@@ -1,18 +1,18 @@
 /*global FB*/
 
 import React from 'react';
-import FacebookLogin from './facebooklogin'
 
 export default class Landing extends React.Component {
 	componentDidMount() {
 	  window.fbAsyncInit = function() {
-	  	console.log('synced before init')
+	  	console.log('synced before init');
 	    FB.init({
 	      appId: '1813842465324998',
 	      cookie: true,
 	      xfbml: true,
 	      version: 'v2.1'
 	    });
+	    console.log('before get login status', FB)
 	    FB.getLoginStatus(function (response) {
 	    	console.log('getting status');
 	      this.statusChangeCallback(response);
@@ -96,9 +96,6 @@ export default class Landing extends React.Component {
 				</div>
 				<div className='landing-btn' align='center'>
 					<p>Click on one of any button below to login</p>
-          <FacebookLogin onLogin={this.onFacebookLogin}>
-            <button>Facebook</button>
-          </FacebookLogin>
 				</div>
 			</div>
 		)
