@@ -25,13 +25,13 @@
     <script>
       window.fbAsyncInit = function () {
         FB.init({
-          appId: process.env.appId,
+          appId: '1813842465324998',
           autoLogAppEvents: true,
           xfbml: true,
           version: 'v2.11'
         });
-
         // Broadcast an event when FB object is ready
+        console.log('setting event');
         var fbInitEvent = new Event('FBObjectReady');
         document.dispatchEvent(fbInitEvent);
       };
