@@ -21,6 +21,7 @@ export default class Landing extends React.Component {
 
 	  // Load the SDK asynchronously
 	  (function(d, s, id) {
+	  	console.log('grabbing sdk');
 	    var js, fjs = d.getElementsByTagName(s)[0];
 	    if (d.getElementById(id)) return;
 	    js = d.createElement(s); js.id = id;
